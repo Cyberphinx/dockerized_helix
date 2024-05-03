@@ -27,13 +27,26 @@ WORKDIR /code
 
 # Install the Dockerfile language server using npm
 RUN npm install -g dockerfile-language-server-nodejs \
+    # docker compose 
     @microsoft/compose-language-service \
+    # bash
     bash-language-server \
+    # typescript, javascript, jsx, tsx
     typescript typescript-language-server \
+    eslint dprint emmet-ls \
+    # php
     intelephense \
+    # tailwindcss
     @tailwindcss/language-server \
+    # yaml, yml
     yaml-language-server@next \
-    vscode-langservers-extracted
+    # html css
+    vscode-langservers-extracted \
+    # Svelte
+    svelte-language-server typescript-svelte-plugin \
+    # sql
+    sql-language-server
+    
 
 # Install phpactor
 RUN curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar
