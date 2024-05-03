@@ -1,0 +1,11 @@
+inherits = "boo_berry"
+
+"ui.virtual.inlay-hint" = { fg = "peony", bg = "peony_10" }
+
+# Override colors in the palette:
+[palette]
+berry = "#200030"
+# berry_dim = "#3A2A4D"
+# berry_saturated = "#0c000d"
+peony = "#8C1396"
+peony_10 = "#19001B"

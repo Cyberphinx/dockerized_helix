@@ -1,0 +1,58 @@
+theme = "rose_pine"
+
+[editor]
+line-number = "relative"
+rulers = [80, 120]
+mouse = true
+auto-save = true
+# Show currently open buffers, only when more than one exists.
+bufferline = "multiple"
+# Highlight all lines with a cursor
+cursorline = true
+# Force the theme to show colors
+true-color = true
+color-modes = true
+insert-final-newline = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+
+[editor.statusline]
+left = ["mode", "diagnostics", "spinner", "version-control"]
+center = ["file-base-name", "file-modification-indicator"]
+right = [
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
+# Show LSP messages below statusline
+display-messages = true
+
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "╎" "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+"esc" = ["collapse_selection", ":w"]
+[keys.select]
+"esc" = ["collapse_selection", "normal_mode", ":w"]
+[keys.insert]
+"esc" = ["normal_mode", ":w"]

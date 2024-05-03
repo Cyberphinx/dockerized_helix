@@ -1,0 +1,14 @@
+inherits = "rose_pine"
+
+# Override the theming for "keyword"s:
+# "ui.virtual.inlay-hint" = { fg = "peony", bg = "peony_10" }
+# "ui.cursorline.primary" = { bg = "rain_10" }
+# "ui.selection.primary" = { bg = "rain" }
+
+# Override colors in the palette:
+[palette]
+base = "#0d0c12"
+text = "#D4CFFF"
+iris = "#ba82ff"
+# peony = "#8C1396"
+# peony_10 = "#0c000d"
