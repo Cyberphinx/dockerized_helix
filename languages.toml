@@ -21,9 +21,6 @@ auto-format = true
 indent = { tab-width = 4, unit = "    " }
 roots = ["package.json"]
 
-[language-server.efm]
-command = "efm-langserver"
-
 [language-server.phpactor]
 command = "phpactor"
 args = ["language-server"]
@@ -48,10 +45,6 @@ language-servers = [
     "completion",
     "diagnostics",
   ] },
-  { name = "efm", only-features = [
-    "diagnostics",
-    "completion",
-  ] },
   { name = "tailwindcss-ls" },
 ]
 
@@ -75,16 +68,8 @@ language-servers = [
     "completion",
     "diagnostics",
   ] },
-  { name = "efm", only-features = [
-    "diagnostics",
-    "completion",
-  ] },
   { name = "tailwindcss-ls" },
 ]
-# language-servers = [
-#   "intelephense", "efm", "tailwindcss-ls", "phpactor", 
-#   "vscode-html-language-server","vscode-css-language-server", "emmet-ls",
-# ]
 
 [language-server.tailwindcss-ls]
 config = { userLanguages = { php = "html", "*.php" = "html" } }

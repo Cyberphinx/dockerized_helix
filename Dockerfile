@@ -11,6 +11,8 @@ RUN apk update && \
 RUN wget -O - https://sh.rustup.rs | ash /dev/stdin -y -c rust-analyzer
 # Set the PATH to include the cargo bin directory
 ENV PATH="/root/.cargo/bin:${PATH}"
+# Install taplo, the TOML language server
+RUN cargo install taplo-cli --locked --features lsp
 
 # To make Helix support color, set the terminal to support 256 colors
 ENV TERM="xterm-256color"
@@ -25,9 +27,13 @@ WORKDIR /code
 
 # Install the Dockerfile language server using npm
 RUN npm install -g dockerfile-language-server-nodejs \
-    bash-language-server typescript \
-    typescript-language-server \
-    intelephense
+    @microsoft/compose-language-service \
+    bash-language-server \
+    typescript typescript-language-server \
+    intelephense \
+    @tailwindcss/language-server \
+    yaml-language-server@next \
+    vscode-langservers-extracted
 
 # Install phpactor
 RUN curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar
