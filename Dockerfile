@@ -3,16 +3,14 @@ FROM alpine:latest
 # Install Helix, tree-sitter-grammars, gcc, wget, and various essential tools
 RUN apk update && \
     apk add --no-cache helix tree-sitter-grammars && \
-    apk add gcc wget curl && \
+    apk add gcc wget curl git && \
     apk add --no-cache nodejs npm && \
-    apk add --no-cache php
+    apk add --no-cache php 
 
 # Install rust and rust-analyzer
 RUN wget -O - https://sh.rustup.rs | ash /dev/stdin -y -c rust-analyzer
 # Set the PATH to include the cargo bin directory
 ENV PATH="/root/.cargo/bin:${PATH}"
-# Install taplo, the TOML language server
-RUN cargo install taplo-cli --locked --features lsp
 
 # To make Helix support color, set the terminal to support 256 colors
 ENV TERM="xterm-256color"
@@ -54,6 +52,9 @@ RUN chmod a+x phpactor.phar
 RUN mkdir -p /root/.local/bin
 RUN mv phpactor.phar /root/.local/bin/phpactor
 ENV PATH="/root/.local/bin:${PATH}"
+
+# RUN hx --grammar fetch
+# RUN hx --grammar build
 
 ENTRYPOINT [ "hx" ]
 

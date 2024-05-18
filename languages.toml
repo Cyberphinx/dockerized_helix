@@ -33,20 +33,21 @@ args = ["--stdio"]
 name = "php"
 auto-format = true
 indent = { tab-width = 4, unit = "    " }
-language-servers = [
-  { name = "intelephense", only-features = [
-    "format",
-    "completion",
-    "diagnostics",
-    "inlay-hints",
-  ] },
-  { name = "phpactor", except-features = [
-    "format",
-    "completion",
-    "diagnostics",
-  ] },
-  { name = "tailwindcss-ls" },
-]
+language-servers = ["phpactor", "tailwindcss-ls"]
+# language-servers = [
+#   { name = "intelephense", only-features = [
+#     "format",
+#     "completion",
+#     "diagnostics",
+#     "inlay-hints",
+#   ] },
+#   { name = "phpactor", except-features = [
+#     "format",
+#     "completion",
+#     "diagnostics",
+#   ] },
+#   { name = "tailwindcss-ls" },
+# ]
 
 [[language]]
 name = "blade"
@@ -56,20 +57,21 @@ file-types = ["blade.php", "blade"]
 injection-regex = "blade"
 roots = ["composer.json", "index.php"]
 indent = { tab-width = 4, unit = "    " }
-language-servers = [
-  { name = "intelephense", only-features = [
-    "format",
-    "completion",
-    "diagnostics",
-    "inlay-hints",
-  ] },
-  { name = "phpactor", except-features = [
-    "format",
-    "completion",
-    "diagnostics",
-  ] },
-  { name = "tailwindcss-ls" },
-]
+language-servers = ["phpactor", "tailwindcss-ls"]
+# language-servers = [
+#   { name = "intelephense", only-features = [
+#     "format",
+#     "completion",
+#     "diagnostics",
+#     "inlay-hints",
+#   ] },
+#   { name = "phpactor", except-features = [
+#     "format",
+#     "completion",
+#     "diagnostics",
+#   ] },
+#   { name = "tailwindcss-ls" },
+# ]
 
 [language-server.tailwindcss-ls]
 config = { userLanguages = { php = "html", "*.php" = "html" } }
